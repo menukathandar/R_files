@@ -32,11 +32,11 @@ hi
 plot(cars)
 ```
 This is the content of lab 1 
+1. Calculate the 10% tax and total payable for the transaction that contains $25 item.
 ```{r}
-library(ggplot2)
-install.packages("ggplot2")
-data("mtcars")
-ggplot()
-ggplot(data, aes(x,y))
+price <- 25
+tax <- 0.1
+total <- (price * tax) + price
+print(paste("The total payable amount is :",total))
 ```
-
+Note: We cannot directly concate string and a value like other programming language so we need to use paste, cat or sprintf.
