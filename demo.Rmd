@@ -46,4 +46,13 @@ Note: We cannot directly concate string and a value like other programming langu
 name <- readline("Enter your name: ")
 cat("Hello, ",name,"!")
 ```
+3. To check datatype
+```{r}
+var <- "R is fun"
+print(is.numeric(var))
+print(is.character(var))
+print(is.integer(var))
+print(is.complex(var))
+```
+Other functions that can be used to get the data type from a variable are "class" and "typeof"
 
