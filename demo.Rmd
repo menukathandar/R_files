@@ -6,7 +6,7 @@ tax <- 0.1
 total <- (price * tax) + price
 print(paste("The total payable amount is :",total))
 ```
-Note: We cannot directly concate string and a value like other programming language so we need to use paste, cat or sprintf.
+Note: We cannot directly concate string and a value like other programming languages so we need to use paste, cat or sprintf.
 
 2. In R, you can ask for user input interactively using the readline() function. This function allows you to prompt the user, take their input as a string, and store it in a variable for further use.
 ```{r}
