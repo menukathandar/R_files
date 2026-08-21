@@ -39,5 +39,5 @@ tax <- as.numeric(readline("Enter the tax: "))
 total <- (price * tax) + price
 cat("Dear ", name,", your total invoice for ", item," including tax is $",format(total, big.mark =","),".", sep = "")
 ```
-
+This is the content of lab 2 
 
