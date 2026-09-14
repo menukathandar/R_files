@@ -1,0 +1,14 @@
+---
+title: "Lab7"
+output: html_document
+date: "2026-09-14"
+---
+
+2.1 Leaflet is a powerful R package designed for creating interactive maps. It provides an intuitive way to visualise geographic data and is widely used in data science, spatial analysis and dashboard development.
+
+Ensuring whether the leaflet package is installed or not
+```{r}
+"leaflet" %in% rownames(installed.packages())
+```
+
+Since the above code returned TRUE, we do not need to install the leaflet package again.
