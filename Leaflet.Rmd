@@ -12,3 +12,16 @@ Ensuring whether the leaflet package is installed or not
 ```
 
 Since the above code returned TRUE, we do not need to install the leaflet package again.
+
+After installation, the package must be loaded in R session every time we want to use it
+
+```{r}
+library(leaflet)
+```
+
+Displaying a basic interactive map of Melbourne
+```{r}
+leaflet() %>%
+  addTiles() %>%
+  setView(lng = 144.9631, lat = -37.8136, zoom = 10)
+```
