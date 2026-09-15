@@ -25,3 +25,17 @@ leaflet() %>%
   addTiles() %>%
   setView(lng = 144.9631, lat = -37.8136, zoom = 10)
 ```
+
+2.2 Adding Location Data (Markers)
+After displaying a basic interactive map, the next step is to enhance it by adding location data which is basically done by using markers that represents specific geographic points on the map
+
+To begin, we first create a simple dataset containing location names along with their corresponding longitude and latitude coordinates:
+
+```{r}
+data_points <- data.frame(
+  name = c("CBD", "Point A", "Point B"),
+  lon = c(144.9431, 144.95, 144.9577),
+  lat = c(-37.8136, -37.80, -37.82)
+)
+```
+
