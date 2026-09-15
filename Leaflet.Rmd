@@ -39,3 +39,29 @@ data_points <- data.frame(
 )
 ```
 
+This dataset consists of three locations in the Melbourne area. Each entry includes:
+1. A label (name)
+2. A longitude value (lon)
+3. A latitude value (Lat)
+
+Once the dataset is prepared we can visualize these locations on the map by adding markers:
+
+```{r}
+leaflet(data_points) %>%
+  addTiles() %>%
+  setView(lng = 144.9631, lat = -37.8136, zoom = 12) %>%
+  addMarkers(~lon, ~lat, popup = ~name)
+```
+
+2.3 Adding Lines (Polylines)
+We can extend the map by adding lines. Lines are useful for representing paths, routes or connections between locations such as transportation routes, delivery paths or movement trajectories
+
+To begin, we define a set of dataset containing a sequence of coordinates that will form a line
+
+```{r}
+line_data <- data.frame(
+  lng <- c(144.900651, 144.897032, 144.894093),
+  lat <- c(-37.794464, -37.796452, -37.792942)
+)
+```
+
