@@ -127,3 +127,18 @@ To verify that the spatial component is correctly loaded, we can visualize the g
 plot(st_geometry(geo_data))
 ```
 
+This initial plot provides a basic view of the spatial structure but does not yet incorporate thematic information.
+To focus on a specific geographic unit, we can filter and visualize an individual suburb. For example: the following code selects the LGA Hume and displays its boundary:
+
+```{r}
+suburb_selected <- geo_data[geo_data$lga_name == "Hume", ]
+plot(st_geometry(suburb_selected), col = "lightblue", main =
+"Hume")
+```
+
+```{r}
+suburb_selected <- geo_data[geo_data$lga_name == "Ballarat", ]
+plot(st_geometry(suburb_selected), col = "pink", main =
+"Ballarat")
+```
+
