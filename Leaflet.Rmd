@@ -198,3 +198,44 @@ alpha = 0.6) +
 )
 ```
 
+# 4. Network Data Visualization in R
+
+4.1 Introduction
+In addition to spatial data, another important way to represent relationships in data is through network analysis. A network consists of nodes (entities) and edges (connections between entities).
+Network visualization is widely used in :
+1. Social network analysis (people and relationships)
+2. Transportation systems (routes and connections)
+3. Communication and interaction data
+
+4.2 Installing and loading required libraries
+
+```{r}
+install.packages("igraph")
+```
+```{r}
+library(igraph)
+```
+4.3 Creating a Simple Network
+```{r}
+edges <- data.frame(
+  from = c("A", "A", "B", "C", "D"),
+  to = c("B", "C", "D", "D", "E")
+)
+```
+
+The dataset describes the relationship such as:
+1. A is connected to B and C
+2. B is connected to D
+3. C is connected to D
+4. D is connected to E
+
+Next, we convert this into a network object
+
+```{r}
+g <- graph_from_data_frame(edges, directed = FALSE)
+```
+
+```{r}
+plot(g)
+```
+
