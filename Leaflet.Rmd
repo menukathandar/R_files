@@ -182,4 +182,19 @@ Since our dataset contains polygon geometries (suburb boundaries), we first need
 library(sf)
 geo_points <- st_centroid(geo_data)
 ```
+Each centroid now represents the location of a suburb.
+We can now visualize the centroids using ggplot2. The size of each point will represent the sqkm value
+
+```{r}
+library(ggplot2)
+ggplot() +
+  geom_sf(data = geo_data, fill = "grey90", color = "white") +
+  geom_sf(data = geo_points, aes(size = sqkm), color = "blue",
+alpha = 0.6) +
+  theme_minimal() +
+  labs(
+  title = "Symbol Map of LGA Area",
+  size = "Area (sqkm)"
+)
+```
 
