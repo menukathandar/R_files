@@ -170,3 +170,16 @@ ggplot(data = geo_data) +
 )
 ```
 
+3.3 Symbol maps for Spatial representation
+
+3.3.1 Introduction
+While choropleth maps represents data using color with geographic regions, symbols maps use symbols placed at specific location to represent values. These symbols can vary in size, shape or color to encode quantitative or categorical information
+
+3.3.2 Applying symbol mapping to Suburb Area
+Since our dataset contains polygon geometries (suburb boundaries), we first need to convert each suburb into a representative point. This is typically done by calculating the centroid of each polygon.
+
+```{r}
+library(sf)
+geo_points <- st_centroid(geo_data)
+```
+
