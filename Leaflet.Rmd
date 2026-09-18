@@ -238,4 +238,15 @@ g <- graph_from_data_frame(edges, directed = FALSE)
 ```{r}
 plot(g)
 ```
-
+4.3.2 Improving the network visualization
+```{r}
+set.seed(42)
+plot(
+  g,
+  vertex.color = "lightblue",
+  vertex.size = 30,
+  vertex.label.cex = 1.1,
+  edge.color = "gray",
+  main = "Simple Network Graph"
+)
+```
