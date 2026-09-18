@@ -250,3 +250,52 @@ plot(
   main = "Simple Network Graph"
 )
 ```
+
+
+4.4 Tree graphs for Hierarchical Network Visualization
+
+4.4.1 Introduction to Tree Graphs
+Tree graphs are widely used to represent:
+1. Organizational structures
+2. File systems (folders and subfolders)
+3. Decision trees
+4. Taxonomies and classification systems
+
+This structure makes it easy to understand levels, hierarchy and flow within a network.
+
+4.4.2 Installing and loading required library
+
+```{r}
+install.packages("igraph")
+library(igraph)
+```
+
+4.4.3 Creating a tree structure
+We begin by defining hierarchical relationships using an edge list:
+
+```{r}
+edges <- data.frame(
+  from = c("Root", "Root", "A", "A", "B"),
+  to = c("A", "B", "C", "D", "E")
+)
+```
+
+Now converting it into graph
+```{r}
+g <- graph_from_data_frame(edges, directed = TRUE)
+```
+
+4.4.4 Visualizing the tree graph
+
+```{r}
+set.seed(44)
+plot(
+  g,
+  layout = layout_as_tree(g),
+  vertex.color = "lightgreen",
+  vertex.size = 30,
+  vertex.label.cex = 1.1,
+  edge.arrow.size = 0.5,
+  main = "Tree Graph Example"
+)
+```
