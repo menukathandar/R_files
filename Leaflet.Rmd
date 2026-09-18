@@ -84,4 +84,46 @@ setView(lng = 144.897, lat = -37.794, zoom = 16)
 In addition to lines, we can also represent areas or regions using polygons. Polygons are commonly used to visualize boundaries such as districts, zones, or coverage areas.
 To create a polygon, we define a set of coordinates that form a closed shape (the first and last points should match):
 
+```{r}
+polygon_data <- data.frame(
+  lng <- c(144.953927, 144.968733, 144.972338, 144.957532),
+  lat <- c(-37.812380, -37.808142, -37.816008, -37.820313)
+)
+```
+
+Then adding polygon to the map
+
+```{r}
+leaflet() %>%
+  addTiles() %>%
+  addPolygons(
+    lng = polygon_data$lng,
+    lat = polygon_data$lat,
+    color = "red",
+    fillColor = "red",
+    fillOpacity = 0.3
+) %>%
+setView(lng = 144.9631, lat = -37.8136, zoom = 14)
+```
+
+# 3. Thematic Cartography Idioms
+Thematic cartography focuses on visualizing spatial data by emphasizing specific attributes or patterns across geographic regions. Thematic maps are used to designed to communicate particular variables such as population, area, density or other statistical measures.
+
+3.1 Loading the dataset
+
+```{r}
+library(sf)
+url <- "https://ndownloader.figshare.com/files/63164836?private_link=9fbb292910d321311480"
+
+temp_file <- tempfile(fileext = ".geojson")
+download.file(url, temp_file, mode = "wb")
+geo_data <- st_read(temp_file)
+print(geo_data)
+```
+
+
+To verify that the spatial component is correctly loaded, we can visualize the geometry:
+```{r}
+plot(st_geometry(geo_data))
+```
 
