@@ -142,3 +142,31 @@ plot(st_geometry(suburb_selected), col = "pink", main =
 "Ballarat")
 ```
 
+3.2 Choropleth maps
+
+3.2.1 Introduction
+A choropleth map is a type of thematic map where areas (polygons) are colored based on a data value rather than just showing the boundaries. Such maps are commonly used for:
+1. Population density
+2. Income distribution
+3. Sales or business performance by region
+4. Public health statistics
+By using color intensity, we can quickly identify patterns, trends and outliers geograpthic areas.
+
+3.2.2 Applying choropleth mapping to suburb area
+Previously, we visualized spatial data in its basic geometric form (points, lines and areas). However those visualizations only showed where things were located not how they differ.
+
+To demonstrate how choropleth maps work, we will now use sqkm variable from our dataset which represents the area of each LGA in square kilometers.
+
+
+```{r}
+library(ggplot2)
+ggplot(data = geo_data) +
+  geom_sf(aes(fill = sqkm), color = NA) +
+  scale_fill_viridis_c() +
+  theme_minimal() +
+  labs(
+  title = "Choropleth Map of LGA Area",
+  fill = "Area (sqkm)"
+)
+```
+
