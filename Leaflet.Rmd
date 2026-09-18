@@ -65,3 +65,23 @@ line_data <- data.frame(
 )
 ```
 
+Visualizing the line on the map:
+
+```{r}
+leaflet() %>%
+  addTiles() %>%
+  addPolylines(
+    data = line_data,
+    ~lng, ~lat,
+    color = "blue",
+    weight = 3
+) %>%
+setView(lng = 144.897, lat = -37.794, zoom = 16)
+```
+
+
+2.4 Adding Areas (Polygons)
+In addition to lines, we can also represent areas or regions using polygons. Polygons are commonly used to visualize boundaries such as districts, zones, or coverage areas.
+To create a polygon, we define a set of coordinates that form a closed shape (the first and last points should match):
+
+
